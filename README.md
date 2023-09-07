@@ -2,15 +2,13 @@
 
 ## Description
 
-This repository contains a collection of scripts and C programs created for various purposes. It includes utilities for preprocessing C files, compiling without linking, generating assembly code, and more. Additionally, there are C programs that demonstrate the use of different features and functions in the C language.
+This repository contains a collection of scripts and C programs created for various purposes. It includes utilities for preprocessing C files, compiling without linking, generating assembly code, and more. Additionally, these are C programs that demonstrate the use of different features and functions in the C language.
 
 ## Table of Contents
 
 1. [Scripts](#scripts)
 2. [C Programs](#c-programs)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [License](#license)
+
 
 ## Scripts
 
@@ -43,16 +41,8 @@ This repository contains a collection of scripts and C programs created for vari
 ### 101-quote.c
 - This C program prints a specific message to the standard error using the `write` function.
 
-## Usage
 
-To use any of the scripts or C programs, follow the instructions provided in their respective descriptions.
 
-## Contributing
 
-Contributions are welcome! If you have any improvements or additional scripts/C programs to add, please submit a pull request.
-
-## License
-
-This repository is licensed under the [MIT License](LICENSE).
 
 
