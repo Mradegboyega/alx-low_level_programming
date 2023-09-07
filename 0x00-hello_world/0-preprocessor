@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -x  # Enable debugging
+
+
+# Get the C file name from the environment variable
+CFILE=$1
+
+# Create an output file
+OUTPUT_FILE="c"
+
+# Run the preprocessor and save the output to OUTPUT_FILE
+gcc -E $CFILE > $OUTPUT_FILE
+
+# Check if the output file was created successfully
+if [ -f $OUTPUT_FILE ]; then
+  echo "The preprocessor output was saved to $OUTPUT_FILE"
+else
+  echo "The preprocessor output could not be saved"
+fi
+

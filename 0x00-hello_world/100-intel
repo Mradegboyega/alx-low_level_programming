@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get the C file name from the environment variable
+CFILE=$1
+
+# Get the output file name
+OUTFILE=${CFILE%.c}.s
+
+# Compile the C file to generate assembly code
+gcc -S -masm=intel $CFILE -o $OUTFILE
+
+# Check if the output file was created successfully
+if [ -f $OUTFILE ]; then
+  echo "The assembly code was saved to $OUTFILE"
+else
+  echo "The assembly code could not be saved"
+fi
+
