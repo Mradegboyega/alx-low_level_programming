@@ -1,18 +1,3 @@
 #!/bin/bash
-
-# Get the C file name from the environment variable
-CFILE=$1
-
-# Get the output file name
-OUTFILE=${CFILE%.c}.o
-
-# Compile the C file
-gcc -c $CFILE -o $OUTFILE
-
-# Check if the output file was created successfully
-if [ -f $OUTFILE ]; then
-  echo "The object file was saved to $OUTFILE"
-else
-  echo "The object file could not be saved"
-fi
+gcc -c "$CFILE" -o "${CFILE%.*}.o"
 

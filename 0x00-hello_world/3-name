@@ -1,18 +1,3 @@
 #!/bin/bash
-
-# Get the C file name from the environment variable
-CFILE=$1
-
-# Get the output file name
-OUTFILE=cisfun
-
-# Compile the C file
-gcc -o $OUTFILE $CFILE
-
-# Check if the output file was created successfully
-if [ -f $OUTFILE ]; then
-  echo "The executable file was created"
-else
-  echo "The executable file could not be created"
-fi
+gcc "$CFILE" -o cisfun
 
