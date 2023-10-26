@@ -1,0 +1,57 @@
+00000000004005f6 <check_password>:
+  4005f6:	55                   	push   %rbp
+  4005f7:	48 89 e5             	mov    %rsp,%rbp
+  4005fa:	48 83 ec 20          	sub    $0x20,%rsp
+  4005fe:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  400602:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400606:	48 89 c7             	mov    %rax,%rdi
+  400609:	e8 b2 fe ff ff       	callq  4004c0 <strlen@plt>
+  40060e:	48 83 f8 04          	cmp    $0x4,%rax
+  400612:	74 07                	je     40061b <check_password+0x25>
+  400614:	b8 00 00 00 00       	mov    $0x0,%eax
+  400619:	eb 58                	jmp    400673 <check_password+0x7d>
+  40061b:	c7 45 fc 48 6f 6c 04 	movl   $0x46c6f48,-0x4(%rbp)
+  400622:	c6 45 fb ff          	movb   $0xff,-0x5(%rbp)
+  400626:	c6 45 fa 00          	movb   $0x0,-0x6(%rbp)
+  40062a:	eb 3c                	jmp    400668 <check_password+0x72>
+  40062c:	0f b6 55 fa          	movzbl -0x6(%rbp),%edx
+  400630:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400634:	48 01 d0             	add    %rdx,%rax
+  400637:	0f b6 00             	movzbl (%rax),%eax
+  40063a:	0f b6 c0             	movzbl %al,%eax
+  40063d:	0f b6 55 fa          	movzbl -0x6(%rbp),%edx
+  400641:	c1 e2 03             	shl    $0x3,%edx
+  400644:	8b 75 fc             	mov    -0x4(%rbp),%esi
+  400647:	89 d1                	mov    %edx,%ecx
+  400649:	d3 ee                	shr    %cl,%esi
+  40064b:	89 f1                	mov    %esi,%ecx
+  40064d:	0f b6 55 fb          	movzbl -0x5(%rbp),%edx
+  400651:	21 ca                	and    %ecx,%edx
+  400653:	39 d0                	cmp    %edx,%eax
+  400655:	74 07                	je     40065e <check_password+0x68>
+  400657:	b8 00 00 00 00       	mov    $0x0,%eax
+  40065c:	eb 15                	jmp    400673 <check_password+0x7d>
+  40065e:	0f b6 45 fa          	movzbl -0x6(%rbp),%eax
+  400662:	83 c0 01             	add    $0x1,%eax
+  400665:	88 45 fa             	mov    %al,-0x6(%rbp)
+  400668:	80 7d fa 03          	cmpb   $0x3,-0x6(%rbp)
+  40066c:	76 be                	jbe    40062c <check_password+0x36>
+  40066e:	b8 01 00 00 00       	mov    $0x1,%eax
+  400673:	c9                   	leaveq 
+  400674:	c3                   	retq   
+
+  4006bf:	e8 32 ff ff ff       	callq  4005f6 <check_password>
+  4006c4:	89 45 fc             	mov    %eax,-0x4(%rbp)
+  4006c7:	83 7d fc 01          	cmpl   $0x1,-0x4(%rbp)
+  4006cb:	75 11                	jne    4006de <main+0x69>
+  4006cd:	bf 88 07 40 00       	mov    $0x400788,%edi
+  4006d2:	e8 d9 fd ff ff       	callq  4004b0 <puts@plt>
+  4006d7:	b8 00 00 00 00       	mov    $0x0,%eax
+  4006dc:	eb 0f                	jmp    4006ed <main+0x78>
+  4006de:	bf 99 07 40 00       	mov    $0x400799,%edi
+  4006e3:	e8 c8 fd ff ff       	callq  4004b0 <puts@plt>
+  4006e8:	b8 01 00 00 00       	mov    $0x1,%eax
+  4006ed:	c9                   	leaveq 
+  4006ee:	c3                   	retq   
+  4006ef:	90                   	nop
+
