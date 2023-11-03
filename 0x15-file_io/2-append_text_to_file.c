@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
-
+#include <elf.h>
 /**
  * append_text_to_file - Appends text to the end of a file.
  * @filename: The name of the file.
